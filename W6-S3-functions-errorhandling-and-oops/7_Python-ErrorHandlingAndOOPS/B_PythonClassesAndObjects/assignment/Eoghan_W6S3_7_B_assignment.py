@@ -1,6 +1,6 @@
 
 #class definition
-class car:
+class Car:
     def __init__(self, make, model, year): #This line of code initialises the Car Object, make, model and year.
         self.make = make    #Defining attribute of make
         self.model = model  #Defining attribute of model
@@ -48,3 +48,24 @@ def display_info(self):
     super().display_info()  
     # An f string that prints the battery size of the electric car in kilowatt-hours (kWh). This attribute is specific to electric vehicles.
     print(f"Battery size: {self.battery_size} kWh")
+
+
+
+# **📝 Test the Classes**:
+
+# Only execute the following code if this script is run directly
+if __name__ == "__main__":
+   
+    # Create an instance of Car with make, model, and year
+    my_car = Car("Toyota", "4runner", 2024)   #creates the variable my=car and gives it the 
+    my_car.display_info()         # Display the car's make, model, and year
+
+
+     #Update the year of the car using the setter method
+    my_car.set_year(2022)           # Change the car's year to 2022
+    print(f"Updated Year: {my_car.get_year()}")  # Access the updated year using the getter
+
+    # Create an instance of ElectricCar with make, model, year, and battery_size
+    my_electric_car = ElectricCar("Tesla", "Model S", 2020, 100)
+    my_electric_car.display_info()       # Display electric car's make, model, year, and battery size
+    my_electric_car.display_battery_info()  # Display only the battery size
