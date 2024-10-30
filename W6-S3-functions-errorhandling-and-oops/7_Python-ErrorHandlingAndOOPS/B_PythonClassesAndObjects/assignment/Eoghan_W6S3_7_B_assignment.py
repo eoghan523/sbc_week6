@@ -33,4 +33,18 @@ def __del__(self):
         print(f"The car {self.make} {self.model} has been deleted.")
 
 
+# ================   Inheritance with ElectricCar subclass ================================= #
 
+# ElectricCar inherits from Car and adds additional functionality
+class ElectricCar(Car):
+    def __init__(self, make, model, year, battery_size):
+        # Initialize the parent class with make, model, and year attributes. It also adds in the additional attribute of battery_size only for the eletric car class.
+        super().__init__(make, model, year) #super() is a Python function that allows a class to access methods and properties from its parent class. 
+        self.battery_size = battery_size  # Defining additional attribute for battery size
+
+   # Function to display electric car details, including battery_size
+def display_info(self):
+    # Calls the display_info method from the parent Car class. This also prints the car's make, model, and year of the existing car class whilst also also adding the inheritted attributes of Electric_car. 
+    super().display_info()  
+    # An f string that prints the battery size of the electric car in kilowatt-hours (kWh). This attribute is specific to electric vehicles.
+    print(f"Battery size: {self.battery_size} kWh")
